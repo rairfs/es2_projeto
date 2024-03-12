@@ -176,7 +176,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ItemLicitacao` (
   `valorTotal` DOUBLE NOT NULL,
   `cpfCnpjVencendor` VARCHAR(45) NOT NULL,
   `tipoPessoa` VARCHAR(45) NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
   `descUnidadeFornecimento` VARCHAR(45) NOT NULL,
   `descComplementarItemCompra` VARCHAR(45) NOT NULL,
   `Fornecedor_cpfCnpj` VARCHAR(45) NOT NULL,
@@ -227,7 +226,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Participante` (
   `nome` VARCHAR(45) NOT NULL,
   `RazaoSocial` VARCHAR(45) NOT NULL,
   `cpfCnpj` VARCHAR(45) NOT NULL,
-  `Participantecol` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idParticipante`))
 ENGINE = InnoDB;
 
