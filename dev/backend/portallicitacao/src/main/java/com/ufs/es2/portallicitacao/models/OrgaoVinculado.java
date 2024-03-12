@@ -1,4 +1,4 @@
-package com.ufs.es2.portallicitacao.model;
+package com.ufs.es2.portallicitacao.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
