@@ -32,14 +32,14 @@ public class Licitacao {
     private String instrumentoLegal;
     @Column(nullable = false)
     private BigDecimal valor;
-    /*@ManyToOne
-    @JoinColumn(name = "municipio_codigoIBGE")
+    @ManyToOne
+    @JoinColumn(name = "Municipio_codigoIBGE")
     private Municipio municipio;
     @ManyToOne
-    @JoinColumn(name = "modalidade_codigo")
+    @JoinColumn(name = "Modalidade_codigo")
     private Modalidade modalidade;
     @ManyToOne
-    @JoinColumn(name = "unidade_gestora_codigo")
-    private UnidadeGestora unidadeGestora;*/
+    @JoinColumn(name = "UnidadeGestora_codigo")
+    private UnidadeGestora unidadeGestora;
 
 }

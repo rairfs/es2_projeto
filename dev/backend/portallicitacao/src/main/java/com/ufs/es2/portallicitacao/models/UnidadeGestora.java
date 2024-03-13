@@ -19,10 +19,10 @@ public class UnidadeGestora {
     @Column(nullable = false, length = 45)
     private String descricaoPoder;
     @ManyToOne
-    @JoinColumn(name = "orgao_vinculado_codigo")
+    @JoinColumn(name = "OrgaoVinculado_codigoSIAFI")
     private OrgaoVinculado orgaoVinculado;
     @ManyToOne
-    @JoinColumn(name = "orgao_maximo_codigo")
+    @JoinColumn(name = "OrgaoMaximo_codigo")
     private OrgaoMaximo orgaoMaximo;
 
 }
