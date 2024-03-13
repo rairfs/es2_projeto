@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/licitacoes/")
 public class LicitacaoController {
 
-    private LicitacaoService licitacaoService;
+    private final LicitacaoService licitacaoService;
 
     public LicitacaoController(LicitacaoService licitacaoService){
         this.licitacaoService = licitacaoService;

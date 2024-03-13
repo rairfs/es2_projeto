@@ -1,17 +1,18 @@
 package com.ufs.es2.portallicitacao.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Licitacao {
 
     @Id
@@ -31,7 +32,7 @@ public class Licitacao {
     private String instrumentoLegal;
     @Column(nullable = false)
     private BigDecimal valor;
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "municipio_codigoIBGE")
     private Municipio municipio;
     @ManyToOne
@@ -39,6 +40,6 @@ public class Licitacao {
     private Modalidade modalidade;
     @ManyToOne
     @JoinColumn(name = "unidade_gestora_codigo")
-    private UnidadeGestora unidadeGestora;
+    private UnidadeGestora unidadeGestora;*/
 
 }
