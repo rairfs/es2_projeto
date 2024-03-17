@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  padding: 0% 3%;
+  background-color: var(--background-header);
+}
+
+div {
+  display: flex;
+  min-width: 15%;
+  max-width: 15%;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.home {
+  padding: 0% 2%;
+}
+
+.home a {
+  font-weight: bold;
+  font-size: larger;
+}
+
+div:hover {
+  background-color: white;
+}
+
+div a {
+  text-align: center;
+  color: white;
+}
+
+div:hover a {
+  color: var(--background-header);
+}
