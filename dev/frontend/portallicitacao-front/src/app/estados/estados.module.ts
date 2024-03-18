@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EstadosRoutingModule } from './estados-routing.module';
 import { EstadosComponent } from './estados.component';
+import { SharedModule } from '../shared/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { EstadosComponent } from './estados.component';
   ],
   imports: [
     CommonModule,
-    EstadosRoutingModule
+    EstadosRoutingModule,
+    SharedModule
   ]
 })
 export class EstadosModule { }

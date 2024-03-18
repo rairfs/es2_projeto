@@ -1,1 +1,25 @@
-<p>modalidades works!</p>
+<article>
+  <section class="buscar">
+    <app-barra-pesquisa titulo="MODALIDADES"></app-barra-pesquisa>
+  </section>
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let modalidade of modalidades">
+          <tr>
+            <td>{{ modalidade.codigo }}</td>
+            <td>{{ modalidade.descricao }}</td>
+            <td>Visualizar</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</article>
