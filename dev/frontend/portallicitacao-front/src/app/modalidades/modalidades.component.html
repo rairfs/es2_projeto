@@ -1,95 +1,25 @@
-<main>
-
-    <section class="buscar">
-        <div class="buscar-licitao">MODALIDADES DE LICITAÇÃO</div>
-        <div class="search">
-            <input type="text">
-        </div>
-    </section>
-
-    <section class="tabela">
-        <div class="cabecalhos">
-            <div class="cabecalho">Código</div>
-            <div class="cabecalho">Descrição</div>
-            <div class="cabecalho">Ações</div>
-        </div>
-        <div class="linhas">
-            <ul>
-                <li class="linha">
-                    <div>1</div>
-                    <div>Descrição do exemplo 1</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>2</div>
-                    <div>Descrição do exemplo 2</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>3</div>
-                    <div>Descrição do exemplo 3</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>4</div>
-                    <div>Descrição do exemplo 4</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>5</div>
-                    <div>Descrição do exemplo 5</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>6</div>
-                    <div>Descrição do exemplo 6</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>7</div>
-                    <div>Descrição do exemplo 7</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>8</div>
-                    <div>Descrição do exemplo 8</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>9</div>
-                    <div>Descrição do exemplo 9</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>10</div>
-                    <div>Descrição do exemplo 10</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>11</div>
-                    <div>Descrição do exemplo 11</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>12</div>
-                    <div>Descrição do exemplo 12</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-                <li class="linha">
-                    <div>13</div>
-                    <div>Descrição do exemplo 13</div>
-                    <a class="acao" href="">Ic</a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="nav">
-            <div class="paginas">1</div>
-            <div class="paginas">2</div>
-            <div class="paginas">3</div>
-            <div class="paginas">...</div>
-            <div class="paginas">4</div>
-    </section>
-
-</main>
+<article>
+  <section class="buscar">
+    <app-barra-pesquisa titulo="MODALIDADES"></app-barra-pesquisa>
+  </section>
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let modalidade of modalidades">
+          <tr>
+            <td>{{ modalidade.codigo }}</td>
+            <td>{{ modalidade.descricao }}</td>
+            <td>Visualizar</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</article>

@@ -1,0 +1,17 @@
+.buscar-licitao {
+  font-weight: bolder;
+  font-size: 27px;
+  color: var(--background-header);
+}
+
+.search input {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 60%;
+  height: 3.5rem;
+  padding-left: 5px;
+}

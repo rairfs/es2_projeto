@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ModalidadesRoutingModule } from './modalidades-routing.module';
 import { ModalidadesComponent } from './modalidades.component';
+import { SharedModule } from '../shared/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ModalidadesComponent } from './modalidades.component';
   ],
   imports: [
     CommonModule,
-    ModalidadesRoutingModule
+    ModalidadesRoutingModule,
+    SharedModule
   ]
 })
 export class ModalidadesModule { }

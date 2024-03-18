@@ -1,161 +1,31 @@
-<main>
-
-    <section class="buscar">
-        <div class="buscar-licitao">MODALIDADES DE LICITAÇÃO</div>
-        <div class="search">
-            <input type="text">
-        </div>
-    </section>
-
-    <section class="tabela">
-        <div class="cabecalhos">
-            <div class="cabecalho">Código</div>
-            <div class="cabecalho">Nome</div>
-            <div class="cabecalho">Poder</div>
-            <div class="cabecalho">Orgão Vinculado</div>
-            <div class="cabecalho">Orgão Máximo</div>
-            <div class="cabecalho">Ações</div>
-        </div>
-        <div class="linhas">
-            <ul>
-                <li class="linha">
-
-                    <div>1</div>
-                    <div>Nome do exemplo 1</div>
-                    <div>Poder de exemplo 1</div>
-                    <div>Orgão de exemplo 1</div>
-                    <div>Orgão de exemplo 1</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>2</div>
-                    <div>Nome do exemplo 2</div>
-
-                    <div>Poder de exemplo 2</div>
-                    <div>Orgão de exemplo 2</div>
-                    <div>Orgão de exemplo 2</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>3</div>
-                    <div>Nome do exemplo 3</div>
-
-                    <div>Poder de exemplo 3</div>
-                    <div>Orgão de exemplo 3</div>
-                    <div>Orgão de exemplo 3</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>4</div>
-                    <div>Nome do exemplo 4</div>
-
-                    <div>Poder de exemplo 4</div>
-                    <div>Orgão de exemplo 4</div>
-                    <div>Orgão de exemplo 4</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>5</div>
-                    <div>Nome do exemplo 5</div>
-
-                    <div>Poder de exemplo 5</div>
-                    <div>Orgão de exemplo 5</div>
-                    <div>Orgão de exemplo 5</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>6</div>
-                    <div>Nome do exemplo 6</div>
-
-                    <div>Poder de exemplo 6</div>
-                    <div>Orgão de exemplo 6</div>
-                    <div>Orgão de exemplo 6</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>7</div>
-                    <div>Nome do exemplo 7</div>
-
-                    <div>Poder de exemplo 7</div>
-                    <div>Orgão de exemplo 7</div>
-                    <div>Orgão de exemplo 7</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>8</div>
-                    <div>Nome do exemplo 8</div>
-
-                    <div>Poder de exemplo 8</div>
-                    <div>Orgão de exemplo 8</div>
-                    <div>Orgão de exemplo 8</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>9</div>
-                    <div>Nome do exemplo 9</div>
-
-                    <div>Poder de exemplo 9</div>
-                    <div>Orgão de exemplo 9</div>
-                    <div>Orgão de exemplo 9</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>10</div>
-                    <div>Nome do exemplo 10</div>
-
-                    <div>Poder de exemplo 10</div>
-                    <div>Orgão de exemplo 10</div>
-                    <div>Orgão de exemplo 10</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>11</div>
-                    <div>Nome do exemplo 11</div>
-
-                    <div>Poder de exemplo 11</div>
-                    <div>Orgão de exemplo 11</div>
-                    <div>Orgão de exemplo 11</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>12</div>
-                    <div>Nome do exemplo 12</div>
-
-                    <div>Poder de exemplo 12</div>
-                    <div>Orgão de exemplo 12</div>
-                    <div>Orgão de exemplo 12</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-                <li class="linha">
-
-                    <div>13</div>
-                    <div>Nome do exemplo 13</div>
-                    <div>Poder de exemplo 13</div>
-                    <div>Orgão de exemplo 13</div>
-                    <div>Orgão de exemplo 13</div>
-                    <a href="" class="acao">Ic</a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="nav">
-        <div class="paginas">1</div>
-        <div class="paginas">2</div>
-        <div class="paginas">3</div>
-        <div class="paginas">...</div>
-        <div class="paginas">7</div>
-    </section>
-
-</main>
+<article>
+  <section class="buscar">
+    <app-barra-pesquisa titulo="UNIDADES GESTORAS"></app-barra-pesquisa>
+  </section>
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Poder</th>
+          <th>Orgão Vinculado</th>
+          <th>Orgão Máximo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let unidade of unidadesGestoras">
+          <tr>
+            <td>{{ unidade.codigo }}</td>
+            <td>{{ unidade.nome }}</td>
+            <td>{{ unidade.orgaoMaximo }}</td>
+            <td>{{ unidade.orgaoVinculado }}</td>
+            <td>{{ unidade.poder }}</td>
+            <td>Visualizar</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</article>
