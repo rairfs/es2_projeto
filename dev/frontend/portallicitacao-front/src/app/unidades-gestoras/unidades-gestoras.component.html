@@ -1,1 +1,32 @@
-<p>unidades-gestoras works!</p>
+<article>
+  <section class="buscar">
+    <div class="buscar-licitao">MODALIDADES DE LICITAÇÃO</div>
+    <app-barra-pesquisa></app-barra-pesquisa>
+  </section>
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Poder</th>
+          <th>Orgão Vinculado</th>
+          <th>Orgão Máximo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let unidade of unidadesGestoras">
+          <tr>
+            <td>{{ unidade.codigo }}</td>
+            <td>{{ unidade.nome }}</td>
+            <td>{{ unidade.orgaoMaximo }}</td>
+            <td>{{ unidade.orgaoVinculado }}</td>
+            <td>{{ unidade.poder }}</td>
+            <td>Visualizar</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</article>

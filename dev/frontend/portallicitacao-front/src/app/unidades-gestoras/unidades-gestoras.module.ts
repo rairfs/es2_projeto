@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UnidadesGestorasRoutingModule } from './unidades-gestoras-routing.module';
 import { UnidadesGestorasComponent } from './unidades-gestoras.component';
-
+import { SharedModule } from '../shared/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { UnidadesGestorasComponent } from './unidades-gestoras.component';
   ],
   imports: [
     CommonModule,
-    UnidadesGestorasRoutingModule
+    UnidadesGestorasRoutingModule,
+    SharedModule
   ]
 })
 export class UnidadesGestorasModule { }
