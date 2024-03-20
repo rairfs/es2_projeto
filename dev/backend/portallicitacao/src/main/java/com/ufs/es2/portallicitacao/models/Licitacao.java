@@ -41,6 +41,5 @@ public class Licitacao {
     @ManyToOne
     @JoinColumn(name = "UnidadeGestora_codigo")
     private UnidadeGestora unidadeGestora;
-    //private String teste;
 
 }
