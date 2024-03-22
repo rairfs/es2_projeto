@@ -9,4 +9,7 @@ import java.util.List;
 
 @Repository
 public interface LicitacaoRepository extends JpaRepository<Licitacao, Integer> {
+
+    public List<Licitacao> findAllByModalidade_codigo(String modalidade);
+
 }

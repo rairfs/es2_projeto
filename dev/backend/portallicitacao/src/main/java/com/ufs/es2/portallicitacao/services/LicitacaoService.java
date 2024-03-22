@@ -19,6 +19,10 @@ public class LicitacaoService {
         return this.licitacaoRepository.findAll();
     }
 
+    public List<Licitacao> findAllByModalidade_codigo(String modalidade){
+        return this.licitacaoRepository.findAllByModalidade_codigo(modalidade);
+    }
+
     public Licitacao findById(Integer id){
         return this.licitacaoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Licitação não encontrada para este ID."));
