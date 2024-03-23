@@ -1,1 +1,103 @@
-<p>licitacoes works!</p>
+<article>
+  <section class="buscar">
+    <app-barra-pesquisa titulo="LICITAÇÕES"></app-barra-pesquisa>
+  </section>
+  <section class="table">
+    <table class="tabelafiltros">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>Municipio</th>
+          <th>Unidade Gestora</th>
+          <th>Modalidade </th>
+          <th>Período</th>
+        </tr>
+      </thead>
+      <tbody class="filtros">
+        <tr>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let estado of estados$ | async">
+                  <tr>
+                    <td>{{ estado }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let municipio of municipios$ | async">
+                  <tr>
+                    <td>{{ municipio }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let unidadeGestora of unidadesGestoras$ | async">
+                  <tr>
+                    <td>{{ unidadeGestora }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let modalidade of modalidades$ | async">
+                  <tr>
+                    <td>{{ modalidade }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td class="periodo">
+        <tr>
+          <td>De: </td>
+          <td><input type="date" name="a" id="3"></td>
+        </tr>
+        <tr>
+          <td>Até: </td>
+          <td><input type="date" name="b" id="2"></td>
+        </tr>
+        </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Unidade Gestora</th>
+          <th>Modalidade</th>
+          <th>Objeto da Licitação</th>
+          <th>Valor</th>
+          <th>Data</th>
+          <th>Detalhes</th>
+        </tr>
+      </thead>
+      <tbody class="licitacoes">
+        <ng-container *ngFor="let unidade of licitacaoObservada">
+          <tr>
+            <td>{{ unidade.numero }}</td>
+            <td>{{ unidade.unidadeGestora }}</td>
+            <td>{{ unidade.modalidade }}</td>
+            <td>{{ unidade.objetoLicitacao }}</td>
+            <td>{{ unidade.valor }}</td>
+            <td>{{ unidade.data }}</td>
+            <td>Visualizar</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</article>
