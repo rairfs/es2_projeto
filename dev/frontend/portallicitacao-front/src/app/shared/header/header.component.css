@@ -36,7 +36,7 @@ header {
   max-width: 10%;
 }
 
-.menu:hover {
+.menu > img:hover {
   transform: rotate(45deg);
 }
 /*
@@ -50,7 +50,7 @@ header {
 }
 
 .hovered {
-  border-radius: 20px 20px 0  0;
+  border-radius: 20px 20px 0 0;
 }
 
 .hoveredLeft {
@@ -58,7 +58,17 @@ header {
   box-shadow: 0px 20px 0 0px white;
 }
 
+.hoveredLeft2 {
+  border-radius: 0 0 0 20px;
+  box-shadow: 0px 20px 0 0px white;
+}
+
 .hoveredRight {
+  border-radius: 0 0 20px 0;
+  box-shadow: 0px 20px 0 0px white;
+}
+
+.hoveredRight2 {
   border-radius: 0 0 20px 0;
   box-shadow: 0px 20px 0 0px white;
 }
@@ -125,7 +135,7 @@ img {
   background-color: white;
   color: var(--background-header);
   cursor: pointer;
-  border-radius: 20px 20px 0  0;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .actualRoute a {

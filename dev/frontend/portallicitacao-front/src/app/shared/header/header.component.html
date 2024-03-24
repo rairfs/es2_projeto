@@ -1,13 +1,14 @@
 <header (pointerleave)="toggler($event)">
   <div class="home" routerLink=""
-  [ngClass]="{'hoveredRight': isUnidadesGestorasHovered}">
+  [ngClass]="{'hoveredRight': isUnidadesGestorasHovered}"
+  [class.hoveredRight2]="rotaAtual == '/unidades-gestoras'">
     <a href="">Portal de Licitações do Governo Federal</a>
   </div>
   <div class="unidades-gestoras" routerLink="unidades-gestoras"
   [ngClass]="{'hoveredRight': isModalidadesHovered}"
   [ngClass]="{'hovered': isUnidadesGestorasHovered}"
   [class.actualRoute]="rotaAtual == '/unidades-gestoras'"
-  [class.hoveredRight]="rotaAtual == '/unidades-gestoras'"
+  [class.hoveredRight2]="rotaAtual == '/modalidades'"
   [class.hovered]="rotaAtual == '/unidades-gestoras'"
   (mouseenter)="hover($event, 'unidadesGestoras')"
   (mouseleave)="hover($event, 'unidadesGestoras')">
@@ -18,6 +19,8 @@
   [ngClass]="{'hovered': isModalidadesHovered}"
   [ngClass]="{'hoveredRight': isEstadosHovered}"
   [class.actualRoute]="rotaAtual == '/modalidades'"
+  [class.hoveredRight2]="rotaAtual == '/estados'"
+  [class.hoveredLeft2]="rotaAtual == '/unidades-gestoras'"
   (mouseenter)="hover($event, 'modalidades')"
   (mouseleave)="hover($event, 'modalidades')">
     <a href="">MODALIDADES</a>
@@ -26,11 +29,13 @@
   [ngClass]="{'hoveredLeft': isModalidadesHovered}"
   [ngClass]="{'hovered': isEstadosHovered}"
   [class.actualRoute]="rotaAtual == '/estados'"
+  [class.hoveredLeft2]="rotaAtual == '/modalidades'"
   (mouseenter)="hover($event, 'estados')"
   (mouseleave)="hover($event, 'estados')">
     <a href="">ESTADOS</a>
   </div>
   <div class="menu" (pointerenter)="toggler($event)"
+  [class.hoveredLeft2]="rotaAtual == '/estados'"
   [ngClass]="{'hoveredLeft': isEstadosHovered}">
     <img src="../../../assets/plus.png">
   </div>
