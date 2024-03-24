@@ -1,17 +1,32 @@
 <header (pointerleave)="toggler($event)">
-  <div class="home" routerLink="">
+  <div class="home" routerLink=""
+  [ngClass]="{'hoveredRight': isUnidadesGestorasHovered}">
     <a href="">Portal de Licitações do Governo Federal</a>
   </div>
-  <div class="unidades-gestoras" routerLink="unidades-gestoras">
-    <a >UNIDADES GESTORAS</a>
+  <div class="unidades-gestoras" routerLink="unidades-gestoras" 
+  [ngClass]="{'hoveredRight': isModalidadesHovered}"
+  [ngClass]="{'hovered': isUnidadesGestorasHovered}"
+  (mouseenter)="hover($event, 'unidadesGestoras')" 
+  (mouseleave)="hover($event, 'unidadesGestoras')">
+    <a>UNIDADES GESTORAS</a>
   </div>
-  <div class="modalidades" routerLink="modalidades">
+  <div class="modalidades" routerLink="modalidades"
+  [ngClass]="{'hoveredLeft': isUnidadesGestorasHovered}" 
+  [ngClass]="{'hovered': isModalidadesHovered}"
+  [ngClass]="{'hoveredRight': isEstadosHovered}"
+  (mouseenter)="hover($event, 'modalidades')"
+  (mouseleave)="hover($event, 'modalidades')">
     <a href="">MODALIDADES</a>
   </div>
-  <div class="estados" routerLink="estados">
+  <div class="estados" routerLink="estados" 
+  [ngClass]="{'hoveredLeft': isModalidadesHovered}"
+  [ngClass]="{'hovered': isEstadosHovered}"
+  (mouseenter)="hover($event, 'estados')"
+  (mouseleave)="hover($event, 'estados')">
     <a href="">ESTADOS</a>
   </div>
-  <div class="menu" (pointerenter)="toggler($event)">
+  <div class="menu" (pointerenter)="toggler($event)" 
+  [ngClass]="{'hoveredLeft': isEstadosHovered}">
     <img src="../../../assets/plus.png">
   </div>
   <section class="menu-list" [class.menu-list-unable]="!isMenuHovered" (pointerleave)="toggler($event)">
