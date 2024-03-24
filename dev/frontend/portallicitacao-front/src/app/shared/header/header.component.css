@@ -49,33 +49,14 @@ header {
   font-size: larger;
 }
 
-.hovered {
-  border-radius: 20px 20px 0 0;
-}
-
-.hoveredLeft {
-  border-radius: 0 0 0 20px;
-  box-shadow: 0px 20px 0 0px white;
-}
-
 .hoveredLeft2 {
   border-radius: 0 0 0 20px;
-  box-shadow: 0px 20px 0 0px white;
-}
-
-.hoveredRight {
-  border-radius: 0 0 20px 0;
   box-shadow: 0px 20px 0 0px white;
 }
 
 .hoveredRight2 {
   border-radius: 0 0 20px 0;
   box-shadow: 0px 20px 0 0px white;
-}
-
-.unidades-gestoras:hover, .modalidades:hover, .estados:hover {
-  background-color: white;
-
 }
 
 .menu {
@@ -85,10 +66,6 @@ header {
 div a {
   text-align: center;
   color: white;
-}
-
-.unidades-gestoras:hover a, .modalidades:hover a, .estados:hover a {
-  color: var(--background-header);
 }
 
 img {
