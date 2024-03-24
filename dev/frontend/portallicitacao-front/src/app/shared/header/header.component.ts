@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isMenuHovered: boolean;
+
+  constructor() {
+    this.isMenuHovered = false;
+  }
+
+  toggler(event: PointerEvent) {
+    if (event.type === "pointerenter") this.isMenuHovered = true;
+    if (event.type === "pointerleave") this.isMenuHovered = false;
+  }
 }

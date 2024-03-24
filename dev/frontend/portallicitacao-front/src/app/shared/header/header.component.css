@@ -1,10 +1,11 @@
 header {
   display: flex;
   padding: 0% 3%;
+  position: relative;
   background-color: var(--background-header);
 }
 
-div {
+.home, .unidades-gestoras, .modalidades, .estados {
   display: flex;
   min-width: 15%;
   max-width: 15%;
@@ -12,6 +13,20 @@ div {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-width: 10%;
+  max-width: 10%;
+  margin-left: 27%;
+}
+
+.menu:hover {
+  transform: rotate(45deg);
 }
 
 .home {
@@ -23,8 +38,12 @@ div {
   font-size: larger;
 }
 
-div:hover {
+.home:hover, .unidades-gestoras:hover, .modalidades:hover, .estados:hover {
   background-color: white;
+}
+
+.menu {
+  width: 30%;
 }
 
 div a {
@@ -34,4 +53,44 @@ div a {
 
 div:hover a {
   color: var(--background-header);
+}
+
+img {
+  width: 20%;
+  height: auto;
+}
+
+.menu-list {
+  background-color: var(--background-header);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 130px;
+  height: 100px;
+  flex-direction: column;
+  align-items: center;
+  top: 90%;
+  left: 87%;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.menu-list-unable {
+  display: none;
+}
+
+.menu-list div {
+  color: white;
+  border: 1px dashed white;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-list div:hover {
+  background-color: white;
+  color: var(--background-header);
+  cursor: pointer;
 }

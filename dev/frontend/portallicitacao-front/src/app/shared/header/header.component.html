@@ -1,4 +1,4 @@
-<header>
+<header (pointerleave)="toggler($event)">
   <div class="home" routerLink="">
     <a href="">Portal de Licitações do Governo Federal</a>
   </div>
@@ -11,4 +11,12 @@
   <div class="estados" routerLink="estados">
     <a href="">ESTADOS</a>
   </div>
+  <div class="menu" (pointerenter)="toggler($event)">
+    <img src="../../../assets/plus.png">
+  </div>
+  <section class="menu-list" [class.menu-list-unable]="!isMenuHovered" (pointerleave)="toggler($event)">
+    <div routerLink="relatorios">Relatórios</div>
+    <div>Exportação</div>
+    <div>Ajuda</div>
+  </section>
 </header>
