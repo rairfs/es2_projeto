@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   isMenuHovered: boolean;
   isUnidadesGestorasHovered: boolean;
   isModalidadesHovered: boolean;
   isEstadosHovered: boolean;
+  rotaAtual: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.isMenuHovered = false;
     this.isUnidadesGestorasHovered = false;
     this.isModalidadesHovered = false;
     this.isEstadosHovered = false;
+    this.rotaAtual = "";
+  }
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.rotaAtual = event.url;
+      }
+    })
   }
 
   toggler(event: PointerEvent) {
@@ -26,12 +36,10 @@ export class HeaderComponent {
 
   hover(event: MouseEvent, element: string) {
     if (event.type === "mouseenter") {
-      console.log(element)
-      
+
       if (element === 'unidadesGestoras') this.isUnidadesGestorasHovered = true;
       if (element === 'modalidades') this.isModalidadesHovered = true;
       if (element === 'estados') this.isEstadosHovered = true;
-      console.log(this.isModalidadesHovered)
     }
     if (event.type === "mouseleave") {
       if (element === 'unidadesGestoras') this.isUnidadesGestorasHovered = false;
@@ -39,5 +47,5 @@ export class HeaderComponent {
       if (element === 'estados') this.isEstadosHovered = false;
     }
   }
-  
+
 }

@@ -3,29 +3,34 @@
   [ngClass]="{'hoveredRight': isUnidadesGestorasHovered}">
     <a href="">Portal de Licitações do Governo Federal</a>
   </div>
-  <div class="unidades-gestoras" routerLink="unidades-gestoras" 
+  <div class="unidades-gestoras" routerLink="unidades-gestoras"
   [ngClass]="{'hoveredRight': isModalidadesHovered}"
   [ngClass]="{'hovered': isUnidadesGestorasHovered}"
-  (mouseenter)="hover($event, 'unidadesGestoras')" 
+  [class.actualRoute]="rotaAtual == '/unidades-gestoras'"
+  [class.hoveredRight]="rotaAtual == '/unidades-gestoras'"
+  [class.hovered]="rotaAtual == '/unidades-gestoras'"
+  (mouseenter)="hover($event, 'unidadesGestoras')"
   (mouseleave)="hover($event, 'unidadesGestoras')">
     <a>UNIDADES GESTORAS</a>
   </div>
   <div class="modalidades" routerLink="modalidades"
-  [ngClass]="{'hoveredLeft': isUnidadesGestorasHovered}" 
+  [ngClass]="{'hoveredLeft': isUnidadesGestorasHovered}"
   [ngClass]="{'hovered': isModalidadesHovered}"
   [ngClass]="{'hoveredRight': isEstadosHovered}"
+  [class.actualRoute]="rotaAtual == '/modalidades'"
   (mouseenter)="hover($event, 'modalidades')"
   (mouseleave)="hover($event, 'modalidades')">
     <a href="">MODALIDADES</a>
   </div>
-  <div class="estados" routerLink="estados" 
+  <div class="estados" routerLink="estados"
   [ngClass]="{'hoveredLeft': isModalidadesHovered}"
   [ngClass]="{'hovered': isEstadosHovered}"
+  [class.actualRoute]="rotaAtual == '/estados'"
   (mouseenter)="hover($event, 'estados')"
   (mouseleave)="hover($event, 'estados')">
     <a href="">ESTADOS</a>
   </div>
-  <div class="menu" (pointerenter)="toggler($event)" 
+  <div class="menu" (pointerenter)="toggler($event)"
   [ngClass]="{'hoveredLeft': isEstadosHovered}">
     <img src="../../../assets/plus.png">
   </div>

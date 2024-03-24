@@ -120,3 +120,14 @@ img {
   color: var(--background-header);
   cursor: pointer;
 }
+
+.actualRoute {
+  background-color: white;
+  color: var(--background-header);
+  cursor: pointer;
+  border-radius: 20px 20px 0  0;
+}
+
+.actualRoute a {
+  color: var(--background-header);
+}
