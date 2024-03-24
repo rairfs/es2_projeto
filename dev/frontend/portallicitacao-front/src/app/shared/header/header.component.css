@@ -1,18 +1,30 @@
 header {
   display: flex;
-  padding: 0% 3%;
+  padding: 0% 4%;
   position: relative;
   background-color: var(--background-header);
+  padding-top: 0.6%;
 }
 
-.home, .unidades-gestoras, .modalidades, .estados {
-  display: flex;
+.home,.unidades-gestoras, .modalidades, .estados {
   min-width: 15%;
-  max-width: 15%;
-  height: 6rem;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  padding-top: 1%;
+  padding-bottom: 1%;
   cursor: pointer;
+}
+
+.unidades-gestoras, .modalidades, .estados {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home {
+  flex-grow: 1;
+}
+.home > a{
+  min-width: 32%;;
+  max-width: 32%;
 }
 
 .menu {
@@ -22,24 +34,38 @@ header {
   cursor: pointer;
   min-width: 10%;
   max-width: 10%;
-  margin-left: 27%;
 }
 
 .menu:hover {
   transform: rotate(45deg);
 }
-
+/*
 .home {
   padding: 0% 2%;
 }
-
+*/
 .home a {
   font-weight: bold;
   font-size: larger;
 }
 
-.home:hover, .unidades-gestoras:hover, .modalidades:hover, .estados:hover {
+.hovered {
+  border-radius: 20px 20px 0  0;
+}
+
+.hoveredLeft {
+  border-radius: 0 0 0 20px;
+  box-shadow: 0px 20px 0 0px white;
+}
+
+.hoveredRight {
+  border-radius: 0 0 20px 0;
+  box-shadow: 0px 20px 0 0px white;
+}
+
+.unidades-gestoras:hover, .modalidades:hover, .estados:hover {
   background-color: white;
+
 }
 
 .menu {
@@ -51,7 +77,7 @@ div a {
   color: white;
 }
 
-div:hover a {
+.unidades-gestoras:hover a, .modalidades:hover a, .estados:hover a {
   color: var(--background-header);
 }
 
