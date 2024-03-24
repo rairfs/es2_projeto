@@ -1,1 +1,77 @@
-<p>relatorios works!</p>
+<article>
+  <section class="buscar">
+    <div class="titulo-pagina">RELATÓRIOS</div>
+  </section>
+  <section class="table">
+    <table class="tabelafiltros">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>Municipio</th>
+          <th>Unidade Gestora</th>
+          <th>Modalidade </th>
+          <th>Período</th>
+        </tr>
+      </thead>
+      <tbody class="filtros">
+        <tr>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let estado of estados$ | async">
+                  <tr>
+                    <td>{{ estado }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let municipio of municipios$ | async">
+                  <tr>
+                    <td>{{ municipio }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let unidadeGestora of unidadesGestoras$ | async">
+                  <tr>
+                    <td>{{ unidadeGestora }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let modalidade of modalidades$ | async">
+                  <tr>
+                    <td>{{ modalidade }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td class="periodo">
+        <tr>
+          <td>De: </td>
+          <td><input type="date" name="a" id="3"></td>
+        </tr>
+        <tr>
+          <td>Até: </td>
+          <td><input type="date" name="b" id="2"></td>
+        </tr>
+        </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </section>
+</article>

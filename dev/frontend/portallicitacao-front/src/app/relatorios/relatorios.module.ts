@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RelatoriosRoutingModule } from './relatorios-routing.module';
 import { RelatoriosComponent } from './relatorios.component';
+import { SharedModule } from '../shared/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RelatoriosComponent } from './relatorios.component';
   ],
   imports: [
     CommonModule,
-    RelatoriosRoutingModule
+    RelatoriosRoutingModule,
+    SharedModule
   ]
 })
 export class RelatoriosModule { }
