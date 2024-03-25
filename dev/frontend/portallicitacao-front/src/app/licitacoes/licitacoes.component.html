@@ -94,10 +94,76 @@
             <td>{{ unidade.objetoLicitacao }}</td>
             <td>{{ unidade.valor }}</td>
             <td>{{ unidade.data }}</td>
-            <td>Visualizar</td>
+            <td (click)="modalToggler('abrir')" class="btn open_btn">Visualizar</td>
           </tr>
         </ng-container>
       </tbody>
     </table>
   </section>
 </article>
+
+<section class="modal" *ngIf="showModal">
+  <div class="titulo titulo_modal">
+    <span>Detalhe da Licitação</span>
+    <span (click)="modalToggler('fechar')" class=" btn close_btn">x</span>
+  </div>
+  <div class="info_licitacao">
+    <p>Número da Licitação: </p>
+    <p>Ano da Licitação: </p>
+    <p>Município: </p>
+    <p>Unidade Gestora: </p>
+    <p>Orgão Superior: </p>
+    <p>Processo: </p>
+    <p>Data de Abertura: </p>
+    <p>Situação: </p>
+    <p>Modalidade da Licitação: </p>
+    <p>Valor da Licitação</p>
+  </div>
+  <div class="titulo titulo_itens">
+    <span class="titulo_itens_sinal">{{ sinalItem }}</span>
+    <span class="titulo_itens_nome">Itens da Licitação</span>
+  </div>
+  <div class="itens_licitacao">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Valor</th>
+          <th>CNPJ/CPF Vencedor</th>
+          <th>Razão Social</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="titulo titulo_participantes">
+    <span class="titulo_participantes_sinal">{{ sinalParticipante }}</span>
+    <span class="titulo_participantes_nome">Participantes da Licitação</span>
+  </div>
+  <div class="participantes_licitacao">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome do Participante</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="titulo titulo_empenhos">
+    <span class="titulo_empenhos_sinal">{{ sinalEmpenho }}</span>
+    <span class="titulo_empenhos_nome">Empenhos da Licitação</span>
+  </div>
+  <div class="empenhos_licitacao">
+    <table>
+      <thead></thead>
+      <tbody>
+        <tr>
+          <th>Código Empenho</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

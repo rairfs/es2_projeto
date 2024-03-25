@@ -13,7 +13,11 @@ export class LicitacoesComponent {
   licitacaoObservada: Licitacao[];
   licitacao: Licitacao[];
 
+  showModal: boolean;
 
+  sinalEmpenho: string;
+  sinalItem: string;
+  sinalParticipante: string;
 
   estados$: Observable<string[]>;
   municipios$: Observable<string[]>;
@@ -21,6 +25,12 @@ export class LicitacoesComponent {
   modalidades$: Observable<string[]>;
 
   constructor() {
+    this.showModal = false;
+
+    this.sinalEmpenho = "-";
+    this.sinalItem = "-";
+    this.sinalParticipante = "-";
+
     this.licitacaoObservada = [
       {
         numero: 1,
@@ -83,12 +93,15 @@ export class LicitacoesComponent {
     );
 
 
-
-
     /*this.estados$.subscribe(console.log);
     this.municipios$.subscribe(console.log);
     this.unidadesGestoras$.subscribe(console.log);
     this.modalidades$.subscribe(console.log);*/
+  }
+
+  modalToggler(acao: string){
+    if (acao === "abrir") this.showModal = true;
+    if (acao === "fechar") this.showModal = false;
   }
 
 }
