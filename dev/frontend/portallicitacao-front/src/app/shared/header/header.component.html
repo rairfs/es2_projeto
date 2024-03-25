@@ -1,24 +1,24 @@
 <header (pointerleave)="toggler($event)">
   <div class="home" routerLink=""
   [class.hoveredRight2]="rotaAtual == '/unidades-gestoras'">
-    <a href="">Portal de Licitações do Governo Federal</a>
+    <a>Portal de Licitações do Governo Federal</a>
   </div>
   <div class="unidades-gestoras" routerLink="unidades-gestoras"
   [class.actualRoute]="rotaAtual == '/unidades-gestoras'"
   [class.hoveredRight2]="rotaAtual == '/modalidades'"
   [class.hovered]="rotaAtual == '/unidades-gestoras'">
-    <a>UNIDADES GESTORAS</a>
+    <a routerLink="unidades-gestoras">UNIDADES GESTORAS</a>
   </div>
   <div class="modalidades" routerLink="modalidades"
   [class.actualRoute]="rotaAtual == '/modalidades'"
   [class.hoveredRight2]="rotaAtual == '/estados'"
   [class.hoveredLeft2]="rotaAtual == '/unidades-gestoras'">
-    <a href="">MODALIDADES</a>
+    <a routerLink="modalidades">MODALIDADES</a>
   </div>
   <div class="estados" routerLink="estados"
   [class.actualRoute]="rotaAtual == '/estados'"
   [class.hoveredLeft2]="rotaAtual == '/modalidades'">
-    <a href="">ESTADOS</a>
+    <a routerLink="estados">ESTADOS</a>
   </div>
   <div class="menu" (pointerenter)="toggler($event)"
   [class.hoveredLeft2]="rotaAtual == '/estados'">
