@@ -36,7 +36,7 @@ header {
   max-width: 10%;
 }
 
-.menu:hover {
+.menu > img:hover {
   transform: rotate(45deg);
 }
 /*
@@ -49,23 +49,14 @@ header {
   font-size: larger;
 }
 
-.hovered {
-  border-radius: 20px 20px 0  0;
-}
-
-.hoveredLeft {
+.hoveredLeft2 {
   border-radius: 0 0 0 20px;
   box-shadow: 0px 20px 0 0px white;
 }
 
-.hoveredRight {
+.hoveredRight2 {
   border-radius: 0 0 20px 0;
   box-shadow: 0px 20px 0 0px white;
-}
-
-.unidades-gestoras:hover, .modalidades:hover, .estados:hover {
-  background-color: white;
-
 }
 
 .menu {
@@ -75,10 +66,6 @@ header {
 div a {
   text-align: center;
   color: white;
-}
-
-.unidades-gestoras:hover a, .modalidades:hover a, .estados:hover a {
-  color: var(--background-header);
 }
 
 img {
@@ -119,4 +106,15 @@ img {
   background-color: white;
   color: var(--background-header);
   cursor: pointer;
+}
+
+.actualRoute {
+  background-color: white;
+  color: var(--background-header);
+  cursor: pointer;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.actualRoute a {
+  color: var(--background-header);
 }
