@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface LicitacaoRepository extends JpaRepository<Licitacao, Integer> {
 
-    public List<Licitacao> findAllByModalidade_codigo(String modalidade);
+    public List<Licitacao> findAllByModalidade_codigo(String codigoModalidade);
+    public List<Licitacao> findAllByUnidadeGestora_codigo(String codigoUnidadeGestora);
 
 }

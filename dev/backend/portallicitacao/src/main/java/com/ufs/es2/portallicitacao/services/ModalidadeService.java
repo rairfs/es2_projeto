@@ -5,6 +5,7 @@ import com.ufs.es2.portallicitacao.repositories.ModalidadeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ModalidadeService {
@@ -23,5 +24,14 @@ public class ModalidadeService {
         return this.modalidadeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Modalidade não encontrada para este ID."));
     }
+
+    public void save(Modalidade modalidade){
+        if(modalidade == null) throw new RuntimeException();
+        Optional<Modalidade> modalidadeEncontrada = modalidadeRepository.findById(modalidade.getCodigo());
+        if(modalidadeEncontrada.isEmpty()){
+            modalidadeRepository.save(modalidade);
+        }
+    }
+
 
 }
