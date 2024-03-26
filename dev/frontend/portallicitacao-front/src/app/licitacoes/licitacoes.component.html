@@ -108,19 +108,19 @@
     <span (click)="modalToggler('fechar')" class=" btn close_btn">x</span>
   </div>
   <div class="info_licitacao">
-    <p>Número da Licitação: </p>
-    <p>Ano da Licitação: </p>
-    <p>Município: </p>
-    <p>Unidade Gestora: </p>
-    <p>Orgão Superior: </p>
-    <p>Processo: </p>
-    <p>Data de Abertura: </p>
-    <p>Situação: </p>
-    <p>Modalidade da Licitação: </p>
-    <p>Valor da Licitação: </p>
+    <p><span>Número da Licitação:</span> </p>
+    <p><span>Ano da Licitação:</span> </p>
+    <p><span>Município:</span> </p>
+    <p><span>Unidade Gestora:</span> </p>
+    <p><span>Orgão Superior:</span> </p>
+    <p><span>Processo:</span> </p>
+    <p><span>Data de Abertura:</span> </p>
+    <p><span>Situação:</span> </p>
+    <p><span>Modalidade da Licitação:</span> </p>
+    <p><span>Valor da Licitação:</span> </p>
   </div>
-  <div class="titulo titulo_itens">
-    <button class="btn titulo_itens_sinal" (click)="alternaSessaoItem()">{{ sinalItem }}</button>
+  <div class="titulo titulo_itens" [class.activeSection]="sinalItem === '-'">
+    <button class="btn titulo_itens_sinal" [class.activeSection]="sinalItem === '-'" (click)="alternaSessaoItem()">{{ sinalItem }}</button>
     <span class="titulo_itens_nome">Itens da Licitação</span>
   </div>
   <div class="itens_licitacao" *ngIf="sinalItem === '-'">
@@ -138,8 +138,8 @@
       <tbody></tbody>
     </table>
   </div>
-  <div class="titulo titulo_participantes">
-    <button class="btn titulo_participantes_sinal" (click)="alteraSessaoParticipante()">{{ sinalParticipante }}</button>
+  <div class="titulo titulo_participantes" [class.activeSection]="sinalParticipante === '-'">
+    <button class="btn titulo_participantes_sinal" [class.activeSection]="sinalParticipante === '-'" (click)="alteraSessaoParticipante()">{{ sinalParticipante }}</button>
     <span class="titulo_participantes_nome">Participantes da Licitação</span>
   </div>
   <div class="participantes_licitacao" *ngIf="sinalParticipante === '-'">
@@ -152,8 +152,8 @@
       <tbody></tbody>
     </table>
   </div>
-  <div class="titulo titulo_empenhos">
-    <button class="btn titulo_empenhos_sinal" (click)="alternaSessaoEmpenho()">{{ sinalEmpenho }}</button>
+  <div class="titulo titulo_empenhos" [class.activeSection]="sinalEmpenho === '-'">
+    <button class="btn titulo_empenhos_sinal" [class.activeSection]="sinalEmpenho === '-'" (click)="alternaSessaoEmpenho()">{{ sinalEmpenho }}</button>
     <span class="titulo_empenhos_nome">Empenhos da Licitação</span>
   </div>
   <div class="empenhos_licitacao" *ngIf="sinalEmpenho === '-'">
