@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Licitacao } from './types/Licitacoes';
 import { Observable, of } from 'rxjs';
-import { map, combineLatestWith } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-licitacoes',
   templateUrl: './licitacoes.component.html',
   styleUrls: ['./licitacoes.component.css']
 })
-export class LicitacoesComponent {
+export class LicitacoesComponent implements OnInit {
 
   licitacaoObservada: Licitacao[];
   licitacao: Licitacao[];
@@ -24,7 +25,7 @@ export class LicitacoesComponent {
   unidadesGestoras$: Observable<string[]>;
   modalidades$: Observable<string[]>;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.showModal = false;
 
     this.sinalEmpenho = "-";
@@ -97,6 +98,9 @@ export class LicitacoesComponent {
     this.municipios$.subscribe(console.log);
     this.unidadesGestoras$.subscribe(console.log);
     this.modalidades$.subscribe(console.log);*/
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   modalToggler(acao: string){
