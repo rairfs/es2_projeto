@@ -1,83 +1,147 @@
 article {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px
-  }
-  
-  .buscar {
-    display: flex;
-    flex-direction: column;
-    margin: 0 3rem;
-  }
-  
-  .table {
-    width: 95%;
-    margin: 0 auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td, tr {
-    min-width: 100%;
-    height: 2rem;
-    text-align: center;
-    vertical-align: middle;
-  }
-  
-  th {
-    font-weight: bolder;
-  }
-  
-  .licitacoes tr:nth-child(odd) {
-    background-color: #D9D9D9;
-  }
-  
-  .tabelafiltros {
-    border-collapse: separate;
-    border-spacing: 10px 3px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px
+}
 
-  .filtros > tr > td > div{
-    overflow-y: scroll;
-    max-height: 100px;
-  }
+.buscar {
+  display: flex;
+  flex-direction: column;
+  margin: 0 3rem;
+}
 
-  .tablefiltros {
-    border-collapse: separate;
-    border-spacing: 10px 3px;
-  }
+.table {
+  width: 95%;
+  margin: 0 auto;
+}
 
-  .tablefiltros > tr {
-    background-color: #D9D9D9;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .tablefiltros > tr > td {
-    border-radius: 2px;
-  }
+th,
+td,
+tr {
+  min-width: 100%;
+  height: 2rem;
+  text-align: center;
+  vertical-align: middle;
+}
 
-  .filtros > table{
-    border-collapse: separate;
-  }
-  
-  .filtros > td {
-    border-radius: 5px;
-    margin: 3px;
-  }
+th {
+  font-weight: bolder;
+}
 
- .periodo {
+.licitacoes tr:nth-child(odd) {
+  background-color: #D9D9D9;
+}
+
+.tabelafiltros {
+  border-collapse: separate;
+  border-spacing: 10px 3px;
+}
+
+.filtros>tr>td>div {
+  overflow-y: scroll;
+  max-height: 100px;
+}
+
+.tablefiltros {
+  border-collapse: separate;
+  border-spacing: 10px 3px;
+}
+
+.tablefiltros>tr {
+  background-color: #D9D9D9;
+}
+
+.tablefiltros>tr>td {
+  border-radius: 2px;
+}
+
+.filtros>table {
+  border-collapse: separate;
+}
+
+.filtros>td {
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.periodo {
   align-items: center;
   display: inline;
- }
+}
 
- .periodo > tr > td > input {
+.periodo>tr>td>input {
   border-radius: 2px;
   padding-left: 2px;
   height: 25px;
   background-color: #D9D9D9;
- }
-  
-  
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  min-height: 80%;
+  max-width: 80%;
+  background-color: white;
+  border: 1px solid black;
+  margin: 15px;
+  border-radius: 10px;
+  overflow: auto;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0px 0px 500px black);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.open_btn svg {
+  width: 30px;
+  height: auto;
+}
+
+.titulo {
+  margin: 5px 0px;
+}
+
+.titulo_modal {
+  display: flex;
+  padding: 5px 15px;
+  justify-content: space-between;
+}
+
+p span, .titulo_modal:first-child {
+  font-weight: bolder;
+}
+
+.titulo_itens, .titulo_participantes, .titulo_empenhos {
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(200, 200, 200);
+}
+
+.titulo_itens_sinal, .titulo_participantes_sinal, .titulo_empenhos_sinal {
+  font-size: 50px;
+  background-color: rgb(200, 200, 200);
+  width: 60px;
+}
+
+.info_licitacao {
+  display: grid;
+  background-color: rgb(200, 200, 200);
+  padding: 5px 15px;
+  grid-template-columns: 50% 50%
+}
+
+.activeSection {
+  background-color: #2957A4;
+  color: white;
+}
