@@ -28,9 +28,9 @@ export class LicitacoesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {
     this.showModal = false;
 
-    this.sinalEmpenho = "-";
-    this.sinalItem = "-";
-    this.sinalParticipante = "-";
+    this.sinalEmpenho = "+";
+    this.sinalItem = "+";
+    this.sinalParticipante = "+";
 
     this.licitacaoObservada = [
       {
@@ -100,12 +100,26 @@ export class LicitacoesComponent implements OnInit {
     this.modalidades$.subscribe(console.log);*/
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   modalToggler(acao: string){
     if (acao === "abrir") this.showModal = true;
     if (acao === "fechar") this.showModal = false;
+  }
+
+  alternaSessaoItem() {
+    if (this.sinalItem == "+") this.sinalItem = "-";
+    else if (this.sinalItem == "-") this.sinalItem = "+";
+  }
+
+  alteraSessaoParticipante(){
+    if (this.sinalParticipante == "+") this.sinalParticipante = "-";
+    else if (this.sinalParticipante == "-") this.sinalParticipante = "+";
+  }
+
+  alternaSessaoEmpenho() {
+    if (this.sinalEmpenho == "+") this.sinalEmpenho = "-";
+    else if (this.sinalEmpenho == "-") this.sinalEmpenho = "+";
   }
 
 }

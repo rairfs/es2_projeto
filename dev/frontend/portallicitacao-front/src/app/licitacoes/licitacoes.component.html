@@ -117,13 +117,13 @@
     <p>Data de Abertura: </p>
     <p>Situação: </p>
     <p>Modalidade da Licitação: </p>
-    <p>Valor da Licitação</p>
+    <p>Valor da Licitação: </p>
   </div>
   <div class="titulo titulo_itens">
-    <span class="titulo_itens_sinal">{{ sinalItem }}</span>
+    <button class="btn titulo_itens_sinal" (click)="alternaSessaoItem()">{{ sinalItem }}</button>
     <span class="titulo_itens_nome">Itens da Licitação</span>
   </div>
-  <div class="itens_licitacao">
+  <div class="itens_licitacao" *ngIf="sinalItem === '-'">
     <table>
       <thead>
         <tr>
@@ -139,10 +139,10 @@
     </table>
   </div>
   <div class="titulo titulo_participantes">
-    <span class="titulo_participantes_sinal">{{ sinalParticipante }}</span>
+    <button class="btn titulo_participantes_sinal" (click)="alteraSessaoParticipante()">{{ sinalParticipante }}</button>
     <span class="titulo_participantes_nome">Participantes da Licitação</span>
   </div>
-  <div class="participantes_licitacao">
+  <div class="participantes_licitacao" *ngIf="sinalParticipante === '-'">
     <table>
       <thead>
         <tr>
@@ -153,10 +153,10 @@
     </table>
   </div>
   <div class="titulo titulo_empenhos">
-    <span class="titulo_empenhos_sinal">{{ sinalEmpenho }}</span>
+    <button class="btn titulo_empenhos_sinal" (click)="alternaSessaoEmpenho()">{{ sinalEmpenho }}</button>
     <span class="titulo_empenhos_nome">Empenhos da Licitação</span>
   </div>
-  <div class="empenhos_licitacao">
+  <div class="empenhos_licitacao" *ngIf="sinalEmpenho === '-'">
     <table>
       <thead></thead>
       <tbody>
