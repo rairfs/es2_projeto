@@ -2,6 +2,9 @@ package com.ufs.es2.portallicitacao.services;
 
 import com.ufs.es2.portallicitacao.models.*;
 import com.ufs.es2.portallicitacao.repositories.LicitacaoRepository;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -33,8 +36,8 @@ public class LicitacaoService {
         logger = Logger.getLogger(LicitacaoService.class.getName());
     }
 
-    public List<Licitacao> getAll(){
-        return this.licitacaoRepository.findAll();
+    public Page<Licitacao> getAll(Pageable pageable) {
+        return licitacaoRepository.findAll(pageable);
     }
 
     public Licitacao findById(Integer id){

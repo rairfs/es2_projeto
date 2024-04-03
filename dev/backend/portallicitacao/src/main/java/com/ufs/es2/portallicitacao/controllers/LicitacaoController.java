@@ -3,6 +3,11 @@ package com.ufs.es2.portallicitacao.controllers;
 import com.ufs.es2.portallicitacao.models.Licitacao;
 import com.ufs.es2.portallicitacao.models.UnidadeGestora;
 import com.ufs.es2.portallicitacao.services.LicitacaoService;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,10 +26,24 @@ public class LicitacaoController {
         this.licitacaoService = licitacaoService;
     }
 
+    // @GetMapping
+    // public ResponseEntity<List<Licitacao>> getAll() {
+    //     List<Licitacao> licitacaos = licitacaoService.getAll();
+    //     return ResponseEntity.ok().body(licitacaos);
+    // }
+
     @GetMapping
-    public ResponseEntity<List<Licitacao>> getAll() {
-        List<Licitacao> licitacaos = licitacaoService.getAll();
-        return ResponseEntity.ok().body(licitacaos);
+    public ResponseEntity<Page<Licitacao>> getAll(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "valor") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDirection) {
+
+        Pageable pageable = PageRequest.of(page, size,
+                Sort.by(sortDirection.equals("asc") ? Sort.Direction.ASC : Sort.Direction.DESC, sortBy));;
+        Page<Licitacao> licitacoes = licitacaoService.getAll(pageable);
+        
+        return ResponseEntity.ok().body(licitacoes);
     }
 
     @GetMapping(value = "/{id}")
