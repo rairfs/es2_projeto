@@ -2,7 +2,6 @@ package com.ufs.es2.portallicitacao.services;
 
 import com.ufs.es2.portallicitacao.models.*;
 import com.ufs.es2.portallicitacao.repositories.LicitacaoRepository;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,42 +19,10 @@ import java.util.logging.Logger;
 @Service
 public class LicitacaoService {
 
-    private static LicitacaoService licitacaoService;
-
-    private LicitacaoService(){
-    }
-
-    public static synchronized LicitacaoService getInstance(){
-        if(licitacaoService == null){
-            licitacaoService = new LicitacaoService();
-        }
-
-        return licitacaoService;
-    }
-
-    public void createLicitacao(){
-        Licitacao licitacao = Licitacao.builder()
-                .idLicitacao(1)
-                .valor(new BigDecimal(1000))
-                .situacao("ATIVO")
-                .situacaoCompra("Publicado")
-                .build();
-    }
-
-
-
-
-
-
-    /*private final LicitacaoRepository licitacaoRepository;
+    private final LicitacaoRepository licitacaoRepository;
     private final ModalidadeService modalidadeService;
     private final UnidadeGestoraService unidadeGestoraService;
     private Logger logger;
-
-    private LicitacaoService(){
-    }
-
-
 
     public LicitacaoService(LicitacaoRepository licitacaoRepository,
                             ModalidadeService modalidadeService,
@@ -165,6 +132,6 @@ public class LicitacaoService {
                 .descricao(colunas[4])
                 .build();
         return modalidade;
-    }*/
+    }
 
 }

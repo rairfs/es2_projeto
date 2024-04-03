@@ -42,41 +42,4 @@ public class Licitacao {
     @JoinColumn(name = "UnidadeGestora_codigo")
     private UnidadeGestora unidadeGestora;
 
-    public static class Builder {
-        private Integer idLicitacao;
-        private BigDecimal valor;
-        private String situacao;
-        private String situacaoCompra;
-
-        public Builder idLicitacao(Integer idLicitacao){
-            this.idLicitacao = idLicitacao;
-            return this;
-        }
-
-        public Builder valor(BigDecimal valor){
-            this.valor = valor;
-            return this;
-        }
-
-        public Builder situacao(String situacao){
-            this.situacao = situacao;
-            return this;
-        }
-
-        public Builder situacaoCompra(String situacaoCompra){
-            this.situacaoCompra = situacaoCompra;
-            return this;
-        }
-
-        public Licitacao build(){
-            Licitacao licitacao = new Licitacao();
-            licitacao.idLicitacao = idLicitacao;
-            licitacao.valor = valor;
-            licitacao.situacao = situacao;
-            licitacao.situacaoCompra = situacaoCompra;
-            return licitacao;
-        }
-
-    }
-
 }
