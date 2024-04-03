@@ -1,26 +1,25 @@
 package com.ufs.es2.portallicitacao.services;
 
-import com.ufs.es2.portallicitacao.models.OrgaoMaximo;
-import com.ufs.es2.portallicitacao.models.UnidadeGestora;
-import com.ufs.es2.portallicitacao.repositories.OrgaoMaximoRepository;
+import com.ufs.es2.portallicitacao.models.OrgaoVinculado;
+import com.ufs.es2.portallicitacao.repositories.OrgaoVinculadoRepository;
 import com.ufs.es2.portallicitacao.validator.OrgaoValidator;
 
 import java.util.Optional;
 
-public class OrgaoMaximoService {
+public class OrgaoVinculadoService {
 
-    private OrgaoMaximoRepository orgaoMaximoRepository;
+    private OrgaoVinculadoRepository orgaoVinculadoRepository;
 
-    public OrgaoMaximoService(OrgaoMaximoRepository orgaoMaximoRepository){
-        this.orgaoMaximoRepository = orgaoMaximoRepository;
+    public OrgaoVinculadoService(OrgaoVinculadoRepository orgaoVinculadoRepository){
+        this.orgaoVinculadoRepository = orgaoVinculadoRepository;
     }
 
-    public void save(OrgaoMaximo orgaoMaximo){
-        if(orgaoMaximo == null) throw new RuntimeException("Ocorreu uma falha ao receber os dados do Órgão.");
-        OrgaoValidator.validarOrgao(orgaoMaximo);
-        Optional<OrgaoMaximo> orgaoMaximoEncontrado = orgaoMaximoRepository.findById(orgaoMaximo.getCodigo());
-        if(orgaoMaximoEncontrado.isEmpty()){
-            orgaoMaximoRepository.save(orgaoMaximo);
+    public void save(OrgaoVinculado orgaoVinculado){
+        if(orgaoVinculado == null) throw new RuntimeException("Ocorreu uma falha ao receber os dados do Órgão.");
+        OrgaoValidator.validarOrgao(orgaoVinculado);
+        Optional<OrgaoVinculado> orgaoVinculadoEncontrado = orgaoVinculadoRepository.findById(orgaoVinculado.getCodigo());
+        if(orgaoVinculadoEncontrado.isEmpty()){
+            orgaoVinculadoRepository.save(orgaoVinculado);
         }
     }
 
