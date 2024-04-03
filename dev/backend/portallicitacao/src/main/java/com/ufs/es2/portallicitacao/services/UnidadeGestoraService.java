@@ -1,6 +1,5 @@
 package com.ufs.es2.portallicitacao.services;
 
-import com.ufs.es2.portallicitacao.models.Modalidade;
 import com.ufs.es2.portallicitacao.models.UnidadeGestora;
 import com.ufs.es2.portallicitacao.repositories.UnidadeGestoraRepository;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,6 @@ package com.ufs.es2.portallicitacao.services;
 
 import com.ufs.es2.portallicitacao.models.*;
 import com.ufs.es2.portallicitacao.repositories.LicitacaoRepository;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
