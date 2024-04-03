@@ -1,0 +1,71 @@
+article {
+  display: grid;
+  font-family: Inter, sans-serif;
+  color: #2957a4;
+  margin: 0px 50px 0px 50px;
+  line-height: normal;
+}
+
+.buscar {
+  font-size: 25px;
+}
+
+.buscar-licitao {
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 839px;
+  height: 52px;
+}
+
+input {
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
+  width: 800px;
+  height: 52px;
+  outline: none;
+}
+
+.busca-por-estado {
+  margin-top: 25px;
+}
+
+.buscar-estado {
+  font-weight: 800;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.estados {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.estado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 10px;
+  background-color: #ffcf00;
+  width: 178px;
+  height: 80px;
+}
+
+.estado:hover {
+  cursor: pointer;
+}

@@ -1,1 +1,169 @@
-<p>licitacoes works!</p>
+<article>
+  <section class="buscar">
+    <app-barra-pesquisa titulo="LICITAÇÕES"></app-barra-pesquisa>
+  </section>
+  <section class="table">
+    <table class="tabelafiltros">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>Municipio</th>
+          <th>Unidade Gestora</th>
+          <th>Modalidade </th>
+          <th>Período</th>
+        </tr>
+      </thead>
+      <tbody class="filtros">
+        <tr>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let estado of estados$ | async">
+                  <tr>
+                    <td>{{ estado }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let municipio of municipios$ | async">
+                  <tr>
+                    <td>{{ municipio }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let unidadeGestora of unidadesGestoras$ | async">
+                  <tr>
+                    <td>{{ unidadeGestora }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div>
+              <table class="tablefiltros">
+                <ng-container *ngFor="let modalidade of modalidades$ | async">
+                  <tr>
+                    <td>{{ modalidade }}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
+          </td>
+          <td class="periodo">
+        <tr>
+          <td>De: </td>
+          <td><input type="date" name="a" id="3"></td>
+        </tr>
+        <tr>
+          <td>Até: </td>
+          <td><input type="date" name="b" id="2"></td>
+        </tr>
+        </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Unidade Gestora</th>
+          <th>Modalidade</th>
+          <th>Objeto da Licitação</th>
+          <th>Valor</th>
+          <th>Data</th>
+          <th>Detalhes</th>
+        </tr>
+      </thead>
+      <tbody class="licitacoes">
+        <ng-container *ngFor="let unidade of licitacaoObservada">
+          <tr>
+            <td>{{ unidade.numero }}</td>
+            <td>{{ unidade.unidadeGestora }}</td>
+            <td>{{ unidade.modalidade }}</td>
+            <td>{{ unidade.objetoLicitacao }}</td>
+            <td>{{ unidade.valor | currency: 'BRL' }}</td>
+            <td>{{ unidade.data }}</td>
+            <td (click)="modalToggler('abrir')" class="btn open_btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4L224 214.3V256v41.7L52.5 440.6zM256 352V256 128 96c0-12.4 7.2-23.7 18.4-29s24.5-3.6 34.1 4.4l192 160c7.3 6.1 11.5 15.1 11.5 24.6s-4.2 18.5-11.5 24.6l-192 160c-9.5 7.9-22.8 9.7-34.1 4.4s-18.4-16.6-18.4-29V352z"/></svg></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</article>
+
+<section class="modal" *ngIf="showModal">
+  <div class="titulo titulo_modal">
+    <span>Detalhe da Licitação</span>
+    <span (click)="modalToggler('fechar')" class=" btn close_btn">x</span>
+  </div>
+  <div class="info_licitacao">
+    <p><span>Número da Licitação:</span> </p>
+    <p><span>Ano da Licitação:</span> </p>
+    <p><span>Município:</span> </p>
+    <p><span>Unidade Gestora:</span> </p>
+    <p><span>Orgão Superior:</span> </p>
+    <p><span>Processo:</span> </p>
+    <p><span>Data de Abertura:</span> </p>
+    <p><span>Situação:</span> </p>
+    <p><span>Modalidade da Licitação:</span> </p>
+    <p><span>Valor da Licitação:</span> </p>
+  </div>
+  <div class="titulo titulo_itens" [class.activeSection]="sinalItem === '-'">
+    <button class="btn titulo_itens_sinal" [class.activeSection]="sinalItem === '-'" (click)="alternaSessaoItem()">{{ sinalItem }}</button>
+    <span class="titulo_itens_nome">Itens da Licitação</span>
+  </div>
+  <div class="itens_licitacao" *ngIf="sinalItem === '-'">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Valor</th>
+          <th>CNPJ/CPF Vencedor</th>
+          <th>Razão Social</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="titulo titulo_participantes" [class.activeSection]="sinalParticipante === '-'">
+    <button class="btn titulo_participantes_sinal" [class.activeSection]="sinalParticipante === '-'" (click)="alteraSessaoParticipante()">{{ sinalParticipante }}</button>
+    <span class="titulo_participantes_nome">Participantes da Licitação</span>
+  </div>
+  <div class="participantes_licitacao" *ngIf="sinalParticipante === '-'">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome do Participante</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="titulo titulo_empenhos" [class.activeSection]="sinalEmpenho === '-'">
+    <button class="btn titulo_empenhos_sinal" [class.activeSection]="sinalEmpenho === '-'" (click)="alternaSessaoEmpenho()">{{ sinalEmpenho }}</button>
+    <span class="titulo_empenhos_nome">Empenhos da Licitação</span>
+  </div>
+  <div class="empenhos_licitacao" *ngIf="sinalEmpenho === '-'">
+    <table>
+      <thead></thead>
+      <tbody>
+        <tr>
+          <th>Código Empenho</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

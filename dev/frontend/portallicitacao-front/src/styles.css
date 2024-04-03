@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:visited, a:link {
+  text-decoration: none;
+  color: black;
+}
+
+:root {
+  --background-header: #2957A4;
+}

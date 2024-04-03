@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-barra-pesquisa',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./barra-pesquisa.component.css']
 })
 export class BarraPesquisaComponent {
-
+  @Input() titulo: String = ""
 }
