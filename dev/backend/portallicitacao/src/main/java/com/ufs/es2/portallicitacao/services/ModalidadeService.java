@@ -1,5 +1,7 @@
 package com.ufs.es2.portallicitacao.services;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import com.ufs.es2.portallicitacao.models.Modalidade;
 import com.ufs.es2.portallicitacao.repositories.ModalidadeRepository;
 import org.springframework.stereotype.Service;
@@ -16,8 +18,8 @@ public class ModalidadeService {
         this.modalidadeRepository = unidadeGestoraRepository;
     }
 
-    public List<Modalidade> getAll(){
-        return this.modalidadeRepository.findAll();
+    public Page<Modalidade> getAll(Pageable pageable){
+        return this.modalidadeRepository.findAll(pageable);
     }
 
     public Modalidade findById(String id){
